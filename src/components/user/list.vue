@@ -38,12 +38,35 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'Home',
   components: {
   },
   props: {
     msg: String
+  },
+  data() {
+    return {
+      listUsers: []
+    }
+  },
+  computed: {
+    ...mapGetters('users', ['users']),
+  },
+  created() {
+    this.loadUsers()
+  },
+  watch: {
+    users() {
+      console.log(this.users)
+    }
+  },
+  methods: {
+    loadUsers() {
+      this.$store.dispatch('users/users')
+    }
   }
 }
 </script>
