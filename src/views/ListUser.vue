@@ -1,18 +1,22 @@
 <template>
-  <div class="hello">
-    <h1>Home</h1>
-    <li class="item-nav">
-      <router-link :to="{ name: 'listUsers' }">Users</router-link>
-    </li>
-    <li class="item-nav">
-      <router-link :to="{ name: 'registerUser' }">Register</router-link>
-    </li>
+  <div class="list-users-page">
+    <div class="container">
+      <Header></Header>
+      <List></List>
+    </div>
   </div>
 </template>
 
 <script>
+import Header from '../components/header'
+import List from '../components/user/list'
+
 export default {
   name: 'Home',
+  components: {
+    Header,
+    List
+  },
   props: {
     msg: String
   }
