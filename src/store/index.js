@@ -11,7 +11,10 @@ Vue.use(Vuex)
 
 const usersModule = {
   state: {
-    users: []
+    users: [],
+    meta: {
+      current_page: 1
+    }
   },
   actions: usersActions,
   mutations: usersMutations,

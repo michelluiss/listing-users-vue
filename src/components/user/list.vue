@@ -1,36 +1,24 @@
 <template>
-  <div class="list">
+  <div class="list"
+    v-infinite-scroll="loadUsers"
+    infinite-scroll-disabled="busy"
+    infinite-scroll-distance="10"
+  >
     <table class="table table-striped">
       <thead>
         <tr>
-          <th scope="col">#</th>
+          <th scope="col">ID</th>
           <th scope="col">Nome</th>
           <th scope="col">Sobrenome</th>
           <th scope="col">E-mail</th>
-          <th scope="col">Telefone</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>37 99999-9999</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-          <td>37 99999-9999</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-          <td>37 99999-9999</td>
+        <tr v-for="(user) in users" :key="user.id">
+          <th scope="row">{{ user.id }}</th>
+          <td>{{ user.firstName }}</td>
+          <td>{{ user.lastName }}</td>
+          <td>{{ user.email }}</td>
         </tr>
       </tbody>
     </table>
@@ -54,9 +42,10 @@ export default {
   },
   computed: {
     ...mapGetters('users', ['users']),
+    ...mapGetters('users', ['meta']),
   },
   created() {
-    this.loadUsers()
+    // this.loadUsers()
   },
   watch: {
     users() {
@@ -65,7 +54,11 @@ export default {
   },
   methods: {
     loadUsers() {
-      this.$store.dispatch('users/users')
+      const params = {
+        _page: this.meta.current_page,
+        _limit: 10
+      }
+      this.$store.dispatch('users/users', params)
     }
   }
 }

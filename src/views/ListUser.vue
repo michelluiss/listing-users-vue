@@ -1,7 +1,8 @@
 <template>
   <div class="list-users-page">
+    <Header></Header>
     <div class="container">
-      <Header></Header>
+      <h1>Usuários</h1>
       <List></List>
     </div>
   </div>

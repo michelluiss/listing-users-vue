@@ -7,11 +7,12 @@
     thead {
       tr {
         padding: 5px 0;
+        background: #283e99;
+        color: #fff;
         th {
           font-size: gr(15);
           font-weight: 600;
           line-height: 30px;
-          border-top: 2px solid #dee2e6;
         }
       }
     }
@@ -23,6 +24,7 @@
           font-weight: 300;
           line-height: 30px;
           border-top: 2px solid #dee2e6;
+          color: #283e99;
         }
         th {
           font-size: gr(15);
@@ -33,7 +35,7 @@
           background-color: rgba(0,0,0,.05);
         }
         &:hover {
-          background: #e3e3e6;
+          background: #cbcbce;
         }
       }
     }

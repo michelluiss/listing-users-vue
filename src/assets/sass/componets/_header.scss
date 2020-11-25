@@ -1,11 +1,11 @@
 .header {
-  margin-top: gr(30);
+  background: #283e99;
   ul {
     display: flex;
     align-items: center;
     justify-content: center;
     list-style: none;
-    padding: 0;
+    padding: gr(20) 0;
     margin: 0;
     .item-nav {
       margin: 0 10px;
@@ -15,8 +15,8 @@
         font-weight: 500;
         color: #000;
         transition: all linear 0.3s;
+        color: #fff;
         &:hover {
-          color: #283e99;
         }
       }
     }
