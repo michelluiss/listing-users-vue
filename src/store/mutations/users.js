@@ -5,6 +5,12 @@ export function users(state, users) {
   } else state.users = users
 }
 
+export function user(state, user) {
+  if (state.users.length > 0) {
+    state.users = state.users.concat(user)
+  } else state.users = user
+}
+
 export function incrementCurrentPage(state) {
   state.meta.current_page++
 }

@@ -13,3 +13,16 @@ export const users = async ({ commit }, params) => {
       })
   })
 }
+
+export const createUser = async ({ commit }, params) => {
+  return new Promise((resolve, reject) => {
+    axios.post('/users', params)
+      .then(response => {
+        commit('user', response.data)
+        resolve(response)
+      })
+      .catch(error => {
+        reject(error)
+      })
+  })
+}
