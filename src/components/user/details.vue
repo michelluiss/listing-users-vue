@@ -1,29 +1,41 @@
 <template>
   <div class="user-details">
-    <div class="box-field">
-      <label>Nome: {{ user.firstName }}</label>
-    </div>
-    <div class="box-field">
-      <label>E-mail: {{ user.email }}</label>
-    </div>
-    <div class="box-field">
-      <label>Telefone: {{ user.phone }}</label>
-    </div>
-    <div class="box-field">
-      <label>Cep: {{ user.address.zipCode }}</label>
-    </div>
-    <div class="box-field">
-      <label>Cidade: {{ user.address.city }}</label>
-    </div>
-    <div class="box-field">
-      <label>Rua: {{ user.address.streetAddress }}</label>
-    </div>
-    <div class="box-field">
-      <label>Estado: {{ user.address.state }}</label>
-    </div>
-    <div class="box-field">
-      <label>País: {{ user.address.country }}</label>
-    </div>
+    <table class="table table-striped">
+      <tbody>
+        <tr>
+          <th scope="row">Nome: </th>
+          <td>{{ user.firstName + ' ' + user.lastName }}</td>
+        </tr>
+        <tr>
+          <th scope="row">E-mail: </th>
+          <td>{{ user.email }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Telefone: </th>
+          <td>{{ user.phone }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Cep: </th>
+          <td>{{ user.address.zipCode }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Cidade: </th>
+          <td>{{ user.address.city }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Rua: </th>
+          <td>{{ user.address.streetAddress }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Estado: </th>
+          <td>{{ user.address.state }}</td>
+        </tr>
+        <tr>
+          <th scope="row">País: </th>
+          <td>{{ user.address.country }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 

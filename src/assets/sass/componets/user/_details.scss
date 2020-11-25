@@ -1,3 +1,15 @@
 .user-details {
-  
+  margin-top: gr(20);
+  table {
+    tbody {
+      tr {
+        &:hover {
+          background: none;
+          &:nth-of-type(odd) {
+            background-color: rgba(0,0,0,.05);
+          }
+        }
+      }
+    }
+  }
 }
