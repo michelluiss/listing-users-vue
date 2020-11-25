@@ -1,0 +1,49 @@
+.register-users-form {
+  h4 {
+    font-size: gr(13);
+    margin-bottom: gr(15);
+    margin-top: gr(20);
+    color: rgba(0,0,0,.54);
+    border-bottom: 0.7px solid rgba(0,0,0,.1);
+    padding-bottom: gr(5);
+  }
+  .general-info,
+  .personal-info {
+    display: flex;
+    flex-wrap: wrap;
+    .col-6 {
+      width: 50%;
+    }
+    .box-input {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      margin-bottom: gr(15);
+      box-sizing: border-box;
+      label {
+        font-size: gr(11);
+        font-weight: 100;
+        padding-bottom: gr(3);
+      }
+      input {
+        border: 1px solid #71749a;
+        border-radius: 3px;
+        text-indent: 5px;
+        line-height: 18px;
+      }
+    }
+    .submit-button {
+      font-size: gr(12);
+      background: #283e99;
+      color: #fff;
+      border: 0;
+      border-radius: 5px;
+      width: fit-content;
+      padding: 4px 15px;
+      margin-left: auto;
+      margin-top: auto;
+      margin-bottom: gr(15);
+      cursor: pointer;
+    }
+  }
+}

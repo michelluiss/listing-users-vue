@@ -1,18 +1,23 @@
 <template>
-  <div class="hello">
-    <h1>Register User</h1>
-    <li class="item-nav">
-      <router-link :to="{ name: 'listUsers' }">Users</router-link>
-    </li>
-    <li class="item-nav">
-      <router-link :to="{ name: 'registerUser' }">Register</router-link>
-    </li>
+  <div class="register-users-page">
+    <Header></Header>
+    <div class="container">
+      <h1>Registro de Usuários</h1>
+      <Register></Register>
+    </div>
   </div>
 </template>
 
 <script>
+import Header from '../components/header'
+import Register from '../components/user/register'
+
 export default {
   name: 'RegisterUser',
+  components: {
+    Header,
+    Register
+  },
   props: {
     msg: String
   }
