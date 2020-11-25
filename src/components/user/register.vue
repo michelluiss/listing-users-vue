@@ -39,7 +39,7 @@
           <input type="text" v-model="user.address.state">
         </div>
         <div class="box-input pr-2">
-          <label>Pais</label>
+          <label>País</label>
           <input type="text" v-model="user.address.country">
         </div>
         <button type="submit" class="submit-button" @click="saveUser($event)">Salvar</button>

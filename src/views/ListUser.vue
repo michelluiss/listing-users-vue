@@ -1,5 +1,5 @@
 <template>
-  <div class="list-users-page">
+  <div class="list-users-page section-page">
     <Header></Header>
     <div class="container">
       <h1>Usuários</h1>

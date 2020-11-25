@@ -16,7 +16,9 @@
       <tbody>
         <tr v-for="(user) in users" :key="user.id">
           <th scope="row">{{ user.id }}</th>
-          <td>{{ user.firstName }}</td>
+          <td>
+            <router-link :to="{ name: 'user', params: { id: user.id }}">{{ user.firstName }}</router-link>
+          </td>
           <td>{{ user.lastName }}</td>
           <td>{{ user.email }}</td>
         </tr>
@@ -29,7 +31,7 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  name: 'Home',
+  name: 'List',
   components: {
   },
   props: {
@@ -44,19 +46,17 @@ export default {
     ...mapGetters('users', ['users']),
     ...mapGetters('users', ['meta']),
   },
+  beforeDestroy() {
+    this.$store.commit('users/resetUsers')
+  },
   created() {
     // this.loadUsers()
-  },
-  watch: {
-    users() {
-      console.log(this.users)
-    }
   },
   methods: {
     loadUsers() {
       const params = {
         _page: this.meta.current_page,
-        _limit: 10
+        _limit: this.meta.current_page === 1 ? 25: 10
       }
       this.$store.dispatch('users/users', params)
     }

@@ -9,9 +9,11 @@
 /*** views ***/
 @import "views/list-users";
 @import "views/register-user";
+@import "views/users";
 
 /*** components ***/
 
 @import "./componets/header";
 @import "./componets/user/list";
 @import "./componets/user/register";
+@import "./componets/user/details";

@@ -17,5 +17,5 @@ export function incrementCurrentPage(state) {
 
 export function resetUsers(state) {
   state.users = []
-  state.meta = { current_page: null }
+  state.meta = { current_page: 1 }
 }

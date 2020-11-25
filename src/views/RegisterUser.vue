@@ -1,5 +1,5 @@
 <template>
-  <div class="register-users-page">
+  <div class="register-users-page section-page">
     <Header></Header>
     <div class="container">
       <h1>Registro de Usuários</h1>

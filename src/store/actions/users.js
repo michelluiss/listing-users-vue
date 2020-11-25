@@ -26,3 +26,16 @@ export const createUser = async ({ commit }, params) => {
       })
   })
 }
+
+/*eslint no-unused-vars: ["error", {"args": "none"}]*/
+export const getUser = async ({ commit }, id) => {
+  return new Promise((resolve, reject) => {
+    axios.get(`/users/${id}`)
+      .then(response => {
+        resolve(response.data)
+      })
+      .catch(error => {
+        reject(error)
+      })
+  })
+}
