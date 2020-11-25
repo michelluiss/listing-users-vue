@@ -68,6 +68,10 @@ html,body {
         font-size: gr(15);
         font-weight: 600;
         line-height: 30px;
+        img {
+          width: 11px;
+          cursor: pointer;
+        }
       }
     }
   }

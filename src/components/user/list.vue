@@ -7,8 +7,22 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Nome</th>
+          <th scope="col">ID
+            <img
+              :src="orderImg"
+              alt=""
+              @click="orderId()"
+              :class="idOrder === 'asc' ? 'asc' : 'desc'"
+            >
+          </th>
+          <th scope="col">Nome
+            <img
+              :src="orderImg"
+              alt=""
+              @click="orderName()"
+              :class="nameOrder === 'asc' ? 'asc' : 'desc'"
+            >
+          </th>
           <th scope="col">Sobrenome</th>
           <th scope="col">E-mail</th>
         </tr>
@@ -34,12 +48,11 @@ export default {
   name: 'List',
   components: {
   },
-  props: {
-    msg: String
-  },
   data() {
     return {
-      listUsers: []
+      orderImg: require('../../assets/order.png'),
+      idOrder: '',
+      nameOrder: ''
     }
   },
   computed: {
@@ -59,6 +72,30 @@ export default {
         _limit: this.meta.current_page === 1 ? 25: 10
       }
       this.$store.dispatch('users/users', params)
+    },
+    orderId() {
+      if (this.idOrder === '') {
+        this.idOrder = 'asc'
+        this.$store.commit('users/orderById', 'asc')
+      } else if (this.idOrder === 'asc') {
+        this.idOrder = 'desc'
+        this.$store.commit('users/orderById', 'desc')
+      } else if (this.idOrder === 'desc') {
+        this.idOrder = ''
+        this.$store.commit('users/orderById', '')
+      }
+    },
+    orderName() {
+      if (this.nameOrder === '') {
+        this.nameOrder = 'asc'
+        this.$store.commit('users/orderByName', 'asc')
+      } else if (this.nameOrder === 'asc') {
+        this.nameOrder = 'desc'
+        this.$store.commit('users/orderByName', 'desc')
+      } else if (this.nameOrder === 'desc') {
+        this.nameOrder = ''
+        this.$store.commit('users/orderByName', '')
+      }
     }
   }
 }
