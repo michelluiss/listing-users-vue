@@ -68,6 +68,9 @@ html,body {
         font-size: gr(15);
         font-weight: 600;
         line-height: 30px;
+        &:last-child {
+          width: gr(320);
+        }
         img {
           width: 11px;
           cursor: pointer;

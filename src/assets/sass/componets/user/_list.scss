@@ -1,3 +1,18 @@
 .list {
   margin-top: gr(30);
+  padding-bottom: gr(30);
+  table {
+    tbody {
+      tr {
+        td {
+          &.name-user {
+            font-weight: 400;
+            &:hover a {
+              color: #00b45a !important;
+            }
+          }
+        }
+      }
+    }
+  }
 }

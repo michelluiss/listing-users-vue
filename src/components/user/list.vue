@@ -2,7 +2,7 @@
   <div class="list"
     v-infinite-scroll="loadUsers"
     infinite-scroll-disabled="busy"
-    infinite-scroll-distance="10"
+    infinite-scroll-distance="40"
   >
     <table class="table table-striped">
       <thead>
@@ -30,7 +30,7 @@
       <tbody>
         <tr v-for="(user) in users" :key="user.id">
           <th scope="row">{{ user.id }}</th>
-          <td>
+          <td class="name-user">
             <router-link :to="{ name: 'user', params: { id: user.id }}">{{ user.firstName }}</router-link>
           </td>
           <td>{{ user.lastName }}</td>
