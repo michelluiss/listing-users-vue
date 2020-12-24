@@ -1,7 +1,7 @@
 ###### Para executar o servidor:
 
 ```bash
-cd back/server
+cd listing-users-vue/back/server
 npm install
 npm start
 ```
@@ -12,7 +12,7 @@ Atenção, a porta 3000 deve estar livre
 
 ## Project setup
 ```bash
-cd front
+cd listing-users-vue/front
 npm install
 npm run serve
 ```
